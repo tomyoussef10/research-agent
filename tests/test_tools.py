@@ -70,3 +70,22 @@ def test_check_args_rejects(args, problem):
 
 def test_check_args_accepts():
     assert check_args(SCHEMA, {"query": "transformer layers"}) is None
+
+
+# ---- LLM helpers ------------------------------------------------------------
+
+def test_gemini_schema_uppercases_types():
+    from agent.llm import _gemini_schema
+    out = _gemini_schema({"type": "object", "properties": {"query": {"type": "string", "description": "q"}},
+                          "required": ["query"]})
+    assert out == {"type": "OBJECT", "properties": {"query": {"type": "STRING", "description": "q"}},
+                   "required": ["query"]}
+
+
+def test_unknown_provider_rejected():
+    from agent import Config
+    from agent.llm import make_llm
+    cfg = Config()
+    cfg.provider = "other"
+    with pytest.raises(RuntimeError, match="Unknown LLM_PROVIDER"):
+        make_llm(cfg)

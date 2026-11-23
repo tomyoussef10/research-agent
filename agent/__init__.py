@@ -24,10 +24,10 @@ def build_tools(cfg: Config) -> dict[str, Tool]:
 def ask(question: str, cfg: Config | None = None, llm=None, tools: dict[str, Tool] | None = None,
         on_step=None, save_trace: bool = True) -> tuple[AgentResult, dict]:
     """Answer one question. Returns the result and a usage summary (tokens, cost, trace path)."""
-    from .llm import AnthropicLLM
+    from .llm import make_llm
 
     cfg = cfg or Config()
-    llm = llm or AnthropicLLM(cfg.anthropic_api_key, cfg.model)
+    llm = llm or make_llm(cfg)
     tools = tools if tools is not None else build_tools(cfg)
 
     log = StepLog()

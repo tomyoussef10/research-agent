@@ -25,9 +25,13 @@ _load_dotenv(ROOT / ".env")
 
 @dataclass
 class Config:
+    # "gemini" (default, free tier) or "anthropic"
+    provider: str = field(default_factory=lambda: os.getenv("LLM_PROVIDER", "gemini").lower())
+    gemini_api_key: str = field(default_factory=lambda: os.getenv("GEMINI_API_KEY", ""))
     anthropic_api_key: str = field(default_factory=lambda: os.getenv("ANTHROPIC_API_KEY", ""))
     tavily_api_key: str = field(default_factory=lambda: os.getenv("TAVILY_API_KEY", ""))
-    model: str = field(default_factory=lambda: os.getenv("AGENT_MODEL", "claude-sonnet-5-5"))
+    model: str = field(default_factory=lambda: os.getenv("AGENT_MODEL") or (
+        "claude-sonnet-5-5" if os.getenv("LLM_PROVIDER", "gemini").lower() == "anthropic" else "gemini-2.5-flash"))
 
     max_tool_calls: int = int(os.getenv("AGENT_MAX_TOOL_CALLS", "6"))
     retries: int = int(os.getenv("AGENT_RETRIES", "2"))
@@ -40,9 +44,9 @@ class Config:
     trace_dir: Path = ROOT / "traces"
 
     # Price per million tokens, used only for the cost estimate in traces.
-    # Check current pricing for your model and update these.
-    price_in_per_mtok: float = float(os.getenv("PRICE_IN_PER_MTOK", "3.0"))
-    price_out_per_mtok: float = float(os.getenv("PRICE_OUT_PER_MTOK", "15.0"))
+    # Gemini's free tier costs $0. For a paid model, set these to its current prices.
+    price_in_per_mtok: float = float(os.getenv("PRICE_IN_PER_MTOK", "0"))
+    price_out_per_mtok: float = float(os.getenv("PRICE_OUT_PER_MTOK", "0"))
 
     # Comma-separated tool names to force-fail (failure-injection testing).
     fail_tools: frozenset[str] = field(

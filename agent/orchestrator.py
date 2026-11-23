@@ -50,6 +50,10 @@ class Orchestrator:
         while True:
             reply = self.llm.create(system=system, messages=messages, tools=specs)
             messages.append({"role": "assistant", "content": reply.blocks})
+            if not reply.tool_calls and not reply.text and not self.log.steps and len(messages) == 2:
+                # A blank first reply (rare with Gemini): nudge once to use a tool.
+                messages.append({"role": "user", "content": "Please use the tools to gather evidence first."})
+                continue
             if not reply.tool_calls:
                 break
 
