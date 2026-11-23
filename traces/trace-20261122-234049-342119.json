@@ -1,0 +1,153 @@
+{
+  "question": "How many times more parameters does GPT-3 have than BERT-large?",
+  "answer": "GPT-3 has approximately **515 times** (or ~514.71 times) more parameters than BERT-large.\n\n**Supporting Details:**\n* **BERT-large:** Contains **340 million (340M)** parameters [4].\n* **GPT-3:** Contains **175 billion (175.0B)** parameters [11] (also cited as 175,255.8M total parameters [12]).\n* **Ratio:** Dividing 175,000M by 340M yields approximately **514.71**, while using the 175,255.8M figure yields **515.46**.\n\nSources:\n[1] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks - Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, p. 18\n[2] Language Models are Few-Shot Learners (GPT-3) - Language Models are Few-Shot Learners (GPT-3), p. 20\n[3] BERT: Pre-training of Deep Bidirectional Transformers - BERT: Pre-training of Deep Bidirectional Transformers, p. 6\n[4] BERT: Pre-training of Deep Bidirectional Transformers - BERT: Pre-training of Deep Bidirectional Transformers, p. 8\n[5] LoRA: Low-Rank Adaptation of Large Language Models - LoRA: Low-Rank Adaptation of Large Language Models, p. 14\n[6] LoRA: Low-Rank Adaptation of Large Language Models - LoRA: Low-Rank Adaptation of Large Language Models, p. 15\n[7] Language Models are Few-Shot Learners (GPT-3) - Language Models are Few-Shot Learners (GPT-3), p. 18\n[8] Language Models are Few-Shot Learners (GPT-3) - Language Models are Few-Shot Learners (GPT-3), p. 27\n[9] Language Models are Few-Shot Learners (GPT-3) - Language Models are Few-Shot Learners (GPT-3), p. 22\n[10] Language Models are Few-Shot Learners (GPT-3) - Language Models are Few-Shot Learners (GPT-3), p. 31\n[11] Language Models are Few-Shot Learners (GPT-3) - Language Models are Few-Shot Learners (GPT-3), p. 8\n[12] LoRA: Low-Rank Adaptation of Large Language Models - LoRA: Low-Rank Adaptation of Large Language Models, p. 8\n[13] LoRA: Low-Rank Adaptation of Large Language Models - LoRA: Low-Rank Adaptation of Large Language Models, p. 7",
+  "steps": [
+    {
+      "n": 1,
+      "tool": "search_papers",
+      "args": {
+        "query": "GPT-3 parameters count BERT-large parameters count"
+      },
+      "status": "ok",
+      "output": "[1] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, p. 18 (score 0.61)\n parameters for the BERT-base query and document encoder of DPR, with 110M parameters each (although we do not train the document encoder ourselves) and 406M trainable parameters from BART-large, 406M parameters, making a total of 626M trainable 18\n\n[2] Language Models are Few-Shot Learners (GPT-3), p. 20 (score 0.56)\nFigure 3.8: Performance on SuperGLUE increases with model size and number of examples in context. A value of K = 32 means that our model was shown 32 examples per task, for 256 examples total divided across the 8 tasks in SuperGLUE. We report GPT-3 values on the dev set, so our numbers are not directly comparable to the dotted reference lines (our test set results are in Table 3.8). The BERT-Large reference model was \ufb01ne-tuned on the SuperGLUE training set (125K examples), whereas BERT++ was \ufb01rst \ufb01ne-tuned on MultiNLI (392K examples) and SWAG (113K examples) before further \ufb01ne-tuning on the SuperGLUE training set (for a total of 630K \ufb01ne-tuning examples). We \ufb01nd the difference in performance between the BERT-Large and BERT++ to be roughly equivalent to the difference between GPT-3 with one example per context versus eight examples per context. and MultiRC, we sampled a new set of examples to use in the context for each problem. For WSC and MultiRC, we used the same set of randomly draw\n\n[3] BERT: Pre-training of Deep Bidirectional Transformers, p. 6 (score 0.54)\n obtaining 4.5% and 7.0% respective average accuracy im- provement over the prior state of the art. Note that BERTBASE and OpenAI GPT are nearly identical in terms of model architecture apart from the at- tention masking. For the largest and most widely reported GLUE task, MNLI, BERT obtains a 4.6% absolute accuracy improvement. On the of\ufb01cial GLUE leaderboard10, BERTLARGE obtains a score of 80.5, compared to OpenAI GPT, which obtains 72.8 as of the date of writing. We \ufb01nd that BERTLARGE signi\ufb01cantly outper- forms BERTBASE across all tasks, especially those with very little training data. The effect of model size is explored more thoroughly in Section 5.2. 4.2 SQuAD v1.1 The Stanford Question Answering Dataset (SQuAD v1.1) is a collection of 100k crowd- sourced question/answer pairs (Rajpurkar et al., 2016). Given a question and a passage from 9The GLUE data set distribution does not include the Test labels, and we only made a single GLUE evaluation server submission for each of BERTBA\n\n[4] Language Models are Few-Shot Learners (GPT-3), p. 20 (score 0.54)\ner, or whether one sentence implies another. This could also explain the comparatively low scores for RTE and CB, which also follow this format. Despite these weaknesses, GPT-3 still outperforms a \ufb01ne-tuned BERT-large on four of eight tasks and on two tasks GPT-3 is close to the state-of-the-art held by a \ufb01ne-tuned 11 billion parameter model. Finally, we note that the few-shot SuperGLUE score steadily improves with both model size and with number of examples in the context showing increasing bene\ufb01ts from in-context learning (Figure 3.8). We scale K up to 32 examples per task, after which point additional examples will not reliably \ufb01t into our context. When sweeping over values of K, we \ufb01nd that GPT-3 requires less than eight total examples per task to outperform a \ufb01ne-tuned BERT-Large on overall SuperGLUE score. 3.8 NLI Natural Language Inference (NLI) [Fyo00] concerns the ability to understand the relationship between two sentences. In practice, this task is usually structured as a tw",
+      "sources": [
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "location": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, p. 18"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 20"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+          "location": "BERT: Pre-training of Deep Bidirectional Transformers, p. 6"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 20"
+        }
+      ],
+      "note": "",
+      "attempts": 1,
+      "seconds": 0.18
+    },
+    {
+      "n": 2,
+      "tool": "search_papers",
+      "args": {
+        "query": "\"BERT-LARGE\" 340M parameters"
+      },
+      "status": "ok",
+      "output": "[1] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, p. 18 (score 0.77)\n parameters for the BERT-base query and document encoder of DPR, with 110M parameters each (although we do not train the document encoder ourselves) and 406M trainable parameters from BART-large, 406M parameters, making a total of 626M trainable 18\n\n[2] BERT: Pre-training of Deep Bidirectional Transformers, p. 8 (score 0.58)\narts of \ufb01ne-tuning. We can see that larger models lead to a strict ac- curacy improvement across all four datasets, even for MRPC which only has 3,600 labeled train- ing examples, and is substantially different from the pre-training tasks. It is also perhaps surpris- ing that we are able to achieve such signi\ufb01cant improvements on top of models which are al- ready quite large relative to the existing literature. For example, the largest Transformer explored in Vaswani et al. (2017) is (L=6, H=1024, A=16) with 100M parameters for the encoder, and the largest Transformer we have found in the literature is (L=64, H=512, A=2) with 235M parameters (Al-Rfou et al., 2018). By contrast, BERTBASE contains 110M parameters and BERTLARGE con- tains 340M parameters. It has long been known that increasing the model size will lead to continual improvements on large-scale tasks such as machine translation and language modeling, which is demonstrated by the LM perplexity of held-out training data shown \n\n[3] LoRA: Low-Rank Adaptation of Large Language Models, p. 14 (score 0.54)\neProgramming. arXiv:2101.00121 [cs], December 2020. URL http://arxiv.org/abs/ 2101.00121. arXiv: 2101.00121. Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. Deberta: Decoding-enhanced bert with disentangled attention, 2021. Neil Houlsby, Andrei Giurgiu, Stanislaw Jastrzebski, Bruna Morrone, Quentin de Laroussilhe, Andrea Gesmundo, Mona Attariyan, and Sylvain Gelly. Parameter-Ef\ufb01cient Transfer Learning for NLP. arXiv:1902.00751 [cs, stat], June 2019. URL http://arxiv.org/abs/1902. 00751. Max Jaderberg, Andrea Vedaldi, and Andrew Zisserman. Speeding up convolutional neural networks with low rank expansions. arXiv preprint arXiv:1405.3866, 2014. Mikhail Khodak, Neil Tenenholtz, Lester Mackey, and Nicol`o Fusi. Initialization and regularization of factorized neural layers, 2021. Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization, 2017. Dmitry Lepikhin, HyoukJoong Lee, Yuanzhong Xu, Dehao Chen, Orhan Firat, Yanping Huang, Maxim Krikun, Noam Shazeer, and Z\n\n[4] LoRA: Low-Rank Adaptation of Large Language Models, p. 15 (score 0.52)\nXiao Liu, Yanan Zheng, Zhengxiao Du, Ming Ding, Yujie Qian, Zhilin Yang, and Jie Tang. GPT Understands, Too. arXiv:2103.10385 [cs], March 2021. URL http://arxiv.org/abs/ 2103.10385. arXiv: 2103.10385. Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach, 2019. Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101, 2017. Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization, 2019. Rabeeh Karimi Mahabadi, James Henderson, and Sebastian Ruder. Compacter: Ef\ufb01cient low-rank hypercomplex adapter layers, 2021. Linyong Nan, Dragomir Radev, Rui Zhang, Amrit Rau, Abhinand Sivaprasad, Chiachun Hsieh, Xiangru Tang, Aadit Vyas, Neha Verma, Pranav Krishna, et al. Dart: Open-domain structured data record to text generation. arXiv preprint arXiv:2007.02871, 2020. Jekaterina Novikova, Ond\u02c7rej Du\u02c7se",
+      "sources": [
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "location": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, p. 18"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+          "location": "BERT: Pre-training of Deep Bidirectional Transformers, p. 8"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "location": "LoRA: Low-Rank Adaptation of Large Language Models, p. 14"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "location": "LoRA: Low-Rank Adaptation of Large Language Models, p. 15"
+        }
+      ],
+      "note": "",
+      "attempts": 1,
+      "seconds": 0.02
+    },
+    {
+      "n": 3,
+      "tool": "search_papers",
+      "args": {
+        "query": "\"175 billion\" parameters GPT-3"
+      },
+      "status": "ok",
+      "output": "[1] Language Models are Few-Shot Learners (GPT-3), p. 18 (score 0.53)\nRT and RoBERTa in a more systematic way, we also evaluate GPT-3 on a standardized collection of datasets, the SuperGLUE benchmark [WPN+19] [WPN+19] [CLC+19] [DMST19] [RBG11] [KCR+18] [ZLL+18] [DGM06] [BHDD+06] [GMDD07] [BDD+09] [PCC18] [PHR+18]. GPT-3\u2019s test-set performance on the SuperGLUE dataset is shown in Table 3.8. In the few-shot setting, we used 32 examples for all tasks, sampled randomly from the training set. For all tasks except WSC 18\n\n[2] Language Models are Few-Shot Learners (GPT-3), p. 27 (score 0.52)\n correct assignments to non-neutral assignments) was 88% on the control model and 52% on GPT-3 175B. This table shows the results of a two-sample T-Test for the difference in mean accuracy between GPT-3 175B and the control model (an unconditional GPT-3 Small model with increased output randomness). 27\n\n[3] Language Models are Few-Shot Learners (GPT-3), p. 22 (score 0.51)\nask and evaluate all models on those instances. First we evaluate GPT-3 in the few-shot setting, for which results are shown in Figure 3.10. On addition and subtraction, GPT-3 displays strong pro\ufb01ciency when the number of digits is small, achieving 100% accuracy on 2 digit addition, 98.9% at 2 digit subtraction, 80.2% at 3 digit addition, and 94.2% at 3-digit subtraction. Performance decreases as the number of digits increases, but GPT-3 still achieves 25-26% accuracy on four digit operations and 9-10% accuracy on \ufb01ve digit operations, suggesting at least some capacity to generalize to larger numbers of digits. GPT-3 also achieves 29.2% accuracy at 2 digit multiplication, an especially computationally intensive operation. Finally, GPT-3 achieves 21.3% accuracy at single digit combined operations (for example, 9*(7+5)), suggesting that it has some robustness beyond just single operations. As Figure 3.10 makes clear, small models do poorly on all of these tasks \u2013 even the 13 billion para\n\n[4] Language Models are Few-Shot Learners (GPT-3), p. 31 (score 0.51)\nFigure 4.1: GPT-3 Training Curves We measure model performance during training on a deduplicated validation split of our training distribution. Though there is some gap between training and validation performance, the gap grows only minimally with model size and training time, suggesting that most of the gap comes from a difference in dif\ufb01culty rather than over\ufb01tting. although models did perform moderately better on data that overlapped between training and testing, this did not signi\ufb01cantly impact reported results due to the small fraction of data which was contaminated (often only a few percent). GPT-3 operates in a somewhat different regime. On the one hand, the dataset and model size are about two orders of magnitude larger than those used for GPT-2, and include a large amount of Common Crawl, creating increased potential for contamination and memorization. On the other hand, precisely due to the large amount of data, even GPT-3 175B does not over\ufb01t its training set by a signi\ufb01cant",
+      "sources": [
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 18"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 27"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 22"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 31"
+        }
+      ],
+      "note": "",
+      "attempts": 1,
+      "seconds": 0.02
+    },
+    {
+      "n": 4,
+      "tool": "search_papers",
+      "args": {
+        "query": "\"Model Name\" \"n_params\" \"GPT-3\" 175B"
+      },
+      "status": "ok",
+      "output": "[1] Language Models are Few-Shot Learners (GPT-3), p. 8 (score 0.52)\nModel Name nparams nlayers dmodel nheads dhead Batch Size Learning Rate GPT-3 Small 125M 12 768 12 64 0.5M 6.0 \u00d7 10\u22124 GPT-3 Medium 350M 24 1024 16 64 0.5M 3.0 \u00d7 10\u22124 GPT-3 Large 760M 24 1536 16 96 0.5M 2.5 \u00d7 10\u22124 GPT-3 XL 1.3B 24 2048 24 128 1M 2.0 \u00d7 10\u22124 GPT-3 2.7B 2.7B 32 2560 32 80 1M 1.6 \u00d7 10\u22124 GPT-3 6.7B 6.7B 32 4096 32 128 2M 1.2 \u00d7 10\u22124 GPT-3 13B 13.0B 40 5140 40 128 2M 1.0 \u00d7 10\u22124 GPT-3 175B or \u201cGPT-3\u201d 175.0B 96 12288 96 128 3.2M 0.6 \u00d7 10\u22124 Table 2.1: Sizes, architectures, and learning hyper-parameters (batch size in tokens and learning rate) of the models which we trained. All models were trained for a total of 300 billion tokens. 2.1 Model and Architectures We use the same model and architecture as GPT-2 [RWC+19], including the modi\ufb01ed initialization, pre-normalization, and reversible tokenization described therein, with the exception that we use alternating dense and locally banded sparse attention patterns in the layers of the transformer, similar to the Sparse Transformer [C\n\n[2] Language Models are Few-Shot Learners (GPT-3), p. 27 (score 0.48)\n correct assignments to non-neutral assignments) was 88% on the control model and 52% on GPT-3 175B. This table shows the results of a two-sample T-Test for the difference in mean accuracy between GPT-3 175B and the control model (an unconditional GPT-3 Small model with increased output randomness). 27\n\n[3] LoRA: Low-Rank Adaptation of Large Language Models, p. 8 (score 0.46)\nModel&Method # Trainable WikiSQL MNLI-m SAMSum Parameters Acc. (%) Acc. (%) R1/R2/RL GPT-3 (FT) 175,255.8M 73.8 89.5 52.0/28.0/44.5 GPT-3 (BitFit) 14.2M 71.3 91.0 51.3/27.4/43.5 GPT-3 (PreEmbed) 3.2M 63.1 88.6 48.3/24.2/40.5 GPT-3 (PreLayer) 20.2M 70.1 89.5 50.8/27.3/43.5 GPT-3 (AdapterH) 7.1M 71.9 89.8 53.0/28.9/44.8 GPT-3 (AdapterH) 40.1M 73.2 91.5 53.2/29.0/45.1 GPT-3 (LoRA) 4.7M 73.4 91.7 53.8/29.8/45.9 GPT-3 (LoRA) 37.7M 74.0 91.6 53.4/29.2/45.1 Table 4: Performance of different adaptation methods on GPT-3 175B. We report the logical form validation accuracy on WikiSQL, validation accuracy on MultiNLI-matched, and Rouge-1/2/L on SAMSum. LoRA performs better than prior approaches, including full \ufb01ne-tuning. The results on WikiSQL have a \ufb02uctuation around \u00b10.5%, MNLI-m around \u00b10.1%, and SAMSum around \u00b10.2/\u00b10.2/\u00b10.1 for the three metrics. 5.5 SCALING UP TO GPT-3 175B As a \ufb01nal stress test for LoRA, we scale up to GPT-3 with 175 billion parameters. Due to the high training cost, we on\n\n[4] LoRA: Low-Rank Adaptation of Large Language Models, p. 7 (score 0.43)\nModel & Method # Trainable E2E NLG Challenge Parameters BLEU NIST MET ROUGE-L CIDEr GPT-2 M (FT)* 354.92M 68.2 8.62 46.2 71.0 2.47 GPT-2 M (AdapterL)* 0.37M 66.3 8.41 45.0 69.8 2.40 GPT-2 M (AdapterL)* 11.09M 68.9 8.71 46.1 71.3 2.47 GPT-2 M (AdapterH) 11.09M 67.3\u00b1.6 8.50\u00b1.07 46.0\u00b1.2 70.7\u00b1.2 2.44\u00b1.01 GPT-2 M (FTTop2)* 25.19M 68.1 8.59 46.0 70.8 2.41 GPT-2 M (PreLayer)* 0.35M 69.7 8.81 46.1 71.4 2.49 GPT-2 M (LoRA) 0.35M 70.4\u00b1.1 8.85\u00b1.02 46.8\u00b1.2 71.8\u00b1.1 2.53\u00b1.02 GPT-2 L (FT)* 774.03M 68.5 8.78 46.0 69.9 2.45 GPT-2 L (AdapterL) 0.88M 69.1\u00b1.1 8.68\u00b1.03 46.3\u00b1.0 71.4\u00b1.2 2.49\u00b1.0 GPT-2 L (AdapterL) 23.00M 68.9\u00b1.3 8.70\u00b1.04 46.1\u00b1.1 71.3\u00b1.2 2.45\u00b1.02 GPT-2 L (PreLayer)* 0.77M 70.3 8.85 46.2 71.7 2.47 GPT-2 L (LoRA) 0.77M 70.4\u00b1.1 8.89\u00b1.02 46.8\u00b1.2 72.0\u00b1.2 2.47\u00b1.02 Table 3: GPT-2 medium (M) and large (L) with different adaptation methods on the E2E NLG Challenge. For all metrics, higher is better. LoRA outperforms several baselines with comparable or fewer trainable parameters. Con\ufb01dence intervals ar",
+      "sources": [
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 8"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners (GPT-3)",
+          "location": "Language Models are Few-Shot Learners (GPT-3), p. 27"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "location": "LoRA: Low-Rank Adaptation of Large Language Models, p. 8"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "location": "LoRA: Low-Rank Adaptation of Large Language Models, p. 7"
+        }
+      ],
+      "note": "",
+      "attempts": 1,
+      "seconds": 0.02
+    },
+    {
+      "n": 5,
+      "tool": "run_python",
+      "args": {
+        "code": "p_gpt3_nom = 175e9\np_bert = 340e6\nratio_nom = p_gpt3_nom / p_bert\n\np_gpt3_exact = 175255.8e6\nratio_exact = p_gpt3_exact / p_bert\n\nprint(f\"175B / 340M = {ratio_nom:.4f}\")\nprint(f\"175,255.8M / 340M = {ratio_exact:.4f}\")\n"
+      },
+      "status": "ok",
+      "output": "175B / 340M = 514.7059\n175,255.8M / 340M = 515.4582",
+      "sources": [],
+      "note": "",
+      "attempts": 1,
+      "seconds": 0.05
+    }
+  ],
+  "tools_used": [
+    "search_papers",
+    "search_papers",
+    "search_papers",
+    "search_papers",
+    "run_python"
+  ],
+  "seconds_total": 31.5,
+  "usage": {
+    "llm_calls": 7,
+    "input_tokens": 25642,
+    "output_tokens": 424,
+    "cost_usd": 0.0
+  }
+}
