@@ -10,7 +10,7 @@ The agent answers multi-step technical questions by choosing among three tools:
 | `web_search` | Recent or external facts not in the papers | Tavily Search API |
 | `run_python` | Arithmetic, ratios, conversions | Python subprocess, 10 s timeout, sockets disabled |
 
-An LLM orchestrator (Google Gemini 2.5 Flash on the free tier; Claude also supported) picks one tool at a time. A validator
+An LLM orchestrator (Google Gemini 3.5 Flash on the free tier; Claude also supported) picks one tool at a time. A validator
 checks every call, retries failures, and falls back to another tool. A synthesizer then
 writes the answer **only** from the logged tool results, with numbered citations. Every
 run is saved as a JSON trace in `traces/`.

@@ -89,7 +89,7 @@ class GeminiLLM:
     RETRY_CODES = {429, 500, 503}
 
     def __init__(self, api_key: str, model: str, max_tokens: int = 8192, max_retries: int = 5):
-        # Gemini 2.5 "thinking" tokens count toward max_tokens, so leave plenty of room.
+        # Gemini "thinking" tokens count toward max_tokens, so leave plenty of room.
         from google import genai
 
         if not api_key:
