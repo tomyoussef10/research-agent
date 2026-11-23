@@ -31,7 +31,7 @@ class Config:
     anthropic_api_key: str = field(default_factory=lambda: os.getenv("ANTHROPIC_API_KEY", ""))
     tavily_api_key: str = field(default_factory=lambda: os.getenv("TAVILY_API_KEY", ""))
     model: str = field(default_factory=lambda: os.getenv("AGENT_MODEL") or (
-        "claude-sonnet-5-5" if os.getenv("LLM_PROVIDER", "gemini").lower() == "anthropic" else "gemini-2.5-flash"))
+        "claude-sonnet-5-5" if os.getenv("LLM_PROVIDER", "gemini").lower() == "anthropic" else "gemini-3.5-flash"))
 
     max_tool_calls: int = int(os.getenv("AGENT_MAX_TOOL_CALLS", "6"))
     retries: int = int(os.getenv("AGENT_RETRIES", "2"))
