@@ -1,0 +1,11 @@
+# arXiv ID | title used in citations
+1706.03762 | Attention Is All You Need
+1810.04805 | BERT: Pre-training of Deep Bidirectional Transformers
+2005.14165 | Language Models are Few-Shot Learners (GPT-3)
+1512.03385 | Deep Residual Learning for Image Recognition (ResNet)
+2106.09685 | LoRA: Low-Rank Adaptation of Large Language Models
+1412.6980 | Adam: A Method for Stochastic Optimization
+2203.15556 | Training Compute-Optimal Large Language Models (Chinchilla)
+2210.03629 | ReAct: Synergizing Reasoning and Acting in Language Models
+2302.04761 | Toolformer: Language Models Can Teach Themselves to Use Tools
+2005.11401 | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks

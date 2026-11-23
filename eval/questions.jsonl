@@ -1,0 +1,30 @@
+{"id": "p1", "question": "How many layers are in the encoder of the base Transformer model in 'Attention Is All You Need'?", "tools": ["search_papers"], "expected": 6}
+{"id": "p2", "question": "What BLEU score did the big Transformer model achieve on the WMT 2014 English-to-German translation task?", "tools": ["search_papers"], "expected": 28.4}
+{"id": "p3", "question": "How many parameters does BERT-base have?", "tools": ["search_papers"], "expected": 110000000}
+{"id": "p4", "question": "What default value of beta2 does the Adam paper recommend?", "tools": ["search_papers"], "expected": 0.999}
+{"id": "p5", "question": "According to the LoRA paper, by what factor does LoRA reduce the number of trainable parameters compared with full fine-tuning of GPT-3 175B?", "tools": ["search_papers"], "expected": 10000}
+{"id": "p6", "question": "Which external tools did Toolformer learn to use?", "tools": ["search_papers"], "expected": null}
+{"id": "w1", "question": "What is the output embedding dimension of the sentence-transformers model all-MiniLM-L6-v2?", "tools": ["web_search"], "expected": 384}
+{"id": "w2", "question": "In what year was the Python programming language first released?", "tools": ["web_search"], "expected": 1991}
+{"id": "c1", "question": "What is 2 to the power of 40 divided by 1024 cubed?", "tools": ["run_python"], "expected": 1024}
+{"id": "c2", "question": "How many gigabytes (10^9 bytes) are needed to store 175 billion parameters as 16-bit floats?", "tools": ["run_python"], "expected": 350}
+{"id": "m1", "question": "How many times more parameters does GPT-3 (largest model) have than BERT-large?", "tools": ["search_papers", "run_python"], "expected": 514.7}
+{"id": "m2", "question": "How many times more parameters does BERT-large have than BERT-base?", "tools": ["search_papers", "run_python"], "expected": 3.09}
+{"id": "m3", "question": "How many training tokens per parameter was Chinchilla trained on?", "tools": ["search_papers", "run_python"], "expected": 20}
+{"id": "m4", "question": "Using the parameter count from the GPT-3 paper, how many gigabytes (10^9 bytes) would the largest GPT-3 model's weights take in 16-bit precision?", "tools": ["search_papers", "run_python"], "expected": 350}
+{"id": "m5", "question": "In the base Transformer, what is the model dimension divided by the number of attention heads?", "tools": ["search_papers", "run_python"], "expected": 64}
+{"id": "m6", "question": "How many more layers does BERT-large have than the encoder of the base Transformer?", "tools": ["search_papers", "run_python"], "expected": 18}
+{"id": "m7", "question": "How many times more layers does the largest GPT-3 model have than BERT-base?", "tools": ["search_papers", "run_python"], "expected": 8}
+{"id": "m8", "question": "How many times more parameters does the largest GPT-3 model have than Chinchilla?", "tools": ["search_papers", "run_python"], "expected": 2.5}
+{"id": "m9", "question": "Chinchilla used about 20 tokens per parameter. How many times more tokens per parameter is that than the largest GPT-3 model was trained with?", "tools": ["search_papers", "run_python"], "expected": 11.67}
+{"id": "m10", "question": "What percent of ImageNet test images did the best ResNet ensemble get right in the top-5, based on its reported top-5 error?", "tools": ["search_papers", "run_python"], "expected": 96.43}
+{"id": "m11", "question": "How many layers deeper is the 152-layer ResNet than VGG-19?", "tools": ["search_papers", "run_python"], "expected": 133}
+{"id": "m12", "question": "How many bytes are needed to store 10,000 all-MiniLM-L6-v2 embeddings as 32-bit floats?", "tools": ["web_search", "run_python"], "expected": 15360000}
+{"id": "m13", "question": "How many years passed between the arXiv release of the Transformer paper and the GPT-3 paper?", "tools": ["search_papers", "run_python"], "expected": 3}
+{"id": "m14", "question": "At which conference was the ReAct paper published, and which benchmarks does the paper evaluate on?", "tools": ["search_papers", "web_search"], "expected": null}
+{"id": "m15", "question": "According to the LoRA paper, VRAM use during GPT-3 175B training dropped from what to what, and what percent reduction is that?", "tools": ["search_papers", "run_python"], "expected": 70.8}
+{"id": "m16", "question": "What is the per-head dimension in BERT-large (hidden size divided by attention heads)?", "tools": ["search_papers", "run_python"], "expected": 64}
+{"id": "m17", "question": "What is the per-head dimension in the largest GPT-3 model (d_model divided by number of heads)?", "tools": ["search_papers", "run_python"], "expected": 128}
+{"id": "m18", "question": "ReAct was evaluated on HotpotQA. How many question-answer pairs does the HotpotQA dataset contain?", "tools": ["search_papers", "web_search"], "expected": 113000}
+{"id": "m19", "question": "How many times larger is BERT-base's hidden size than the embedding dimension of all-MiniLM-L6-v2?", "tools": ["search_papers", "web_search", "run_python"], "expected": 2}
+{"id": "m20", "question": "The base Transformer was trained for a set number of steps in a set number of hours. How many hours per 1,000 steps is that?", "tools": ["search_papers", "run_python"], "expected": 0.12}
