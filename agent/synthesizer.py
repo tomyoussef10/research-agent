@@ -29,7 +29,7 @@ def _format_evidence(log: StepLog) -> str:
             parts.append(f"Step {step.n}: {step.tool} failed. Note: {step.note}")
     if not parts:
         return "(No tool returned usable evidence.)"
-    src_lines = "\n".join(f"[{i + 1}] {s['title']} - {s['location']}" for i, s in enumerate(sources))
+    src_lines = "\n".join(f"[{i + 1}] {_label(s)}" for i, s in enumerate(sources))
     return "\n\n".join(parts) + ("\n\nSOURCES\n" + src_lines if src_lines else "")
 
 
@@ -41,8 +41,15 @@ def synthesize(llm, question: str, log: StepLog) -> str:
     )
     answer = reply.text
     sources = log.numbered_sources()
-    if sources:
-        answer += "\n\nSources:\n" + "\n".join(
-            f"[{i + 1}] {s['title']} - {s['location']}" for i, s in enumerate(sources)
-        )
+    # List only the sources the answer actually cites, keeping their numbers.
+    cited = [(i + 1, s) for i, s in enumerate(sources) if f"[{i + 1}]" in answer]
+    if cited:
+        answer += "\n\nSources:\n" + "\n".join(f"[{n}] {_label(s)}" for n, s in cited)
     return answer
+
+
+def _label(src: dict) -> str:
+    """Paper sources already include the title in their location ("Title, p. 8")."""
+    if src["location"].startswith(src["title"]):
+        return src["location"]
+    return f"{src['title']} - {src['location']}"
